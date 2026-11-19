@@ -49,8 +49,8 @@ Tested on Ubuntu 24.04 (Zorin OS 18.1) x64, X11 session, with Intel and NVIDIA G
 
 ### Requirements
 
-- GCC or Clang, CMake 3.20 or newer, Ninja, pkg-config and Python 3.
-- SDL3 3.4 or newer, with its development files.
+- GCC (`build-essential`), CMake 3.20 or newer, Ninja, pkg-config and Python 3. GCC is required: it compiles the disc overlays at run time. Clang is optional; when installed, the game build uses it.
+- SDL3 3.4 or newer is used when the system has it, with its development files. Otherwise the build downloads the pinned SDL3 release, which needs network access.
 - OpenGL and windowing development packages, for example on Ubuntu:
 
   ```sh
