@@ -81,8 +81,9 @@ python3 psxrecomp/psxrecomp_cli.py rebuild \
   --cmake-extra=-DPSX_NETPLAY=OFF
 
 exe="${BUILD_DIR}/WE2002Recompiled"
+[[ "${exe}" = /* ]] || exe="${ROOT}/${exe}"
 if [[ ! -x "${exe}" ]]; then
   echo "error: build finished but ${exe} is missing" >&2
   exit 1
 fi
-echo "==> done: ${ROOT}/${exe}"
+echo "==> done: ${exe}"
