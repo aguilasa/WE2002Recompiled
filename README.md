@@ -59,6 +59,7 @@ Tested on Ubuntu 24.04 (Zorin OS 18.1) x64, X11 session, with Intel and NVIDIA G
   ```
 
 - Optional: `ccache`, which speeds up rebuilds of the large generated sources.
+- To package the optimized release (`scripts/package_release.sh`), a CMake newer than the 3.28 shipped by Ubuntu 24.04: its runtime configure passes an empty `CMAKE_PROJECT_INCLUDE`, which CMake 3.28.3 rejects. CMake 4.4.5 from PyPI works, for example `python3 -m venv ~/cmake-venv && ~/cmake-venv/bin/pip install cmake`, then put `~/cmake-venv/bin` first on `PATH`. The game build itself works with 3.28.
 
 ### Build
 
